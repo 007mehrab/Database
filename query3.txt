@@ -1,0 +1,123 @@
+=============3a=================
+select customer_name from despositor
+except
+(select customer_name from borrower);
+
+
+
+
+
+
+
+
+
+=======================8d===================
+select  customer_name
+	from despositor as d, account as a
+	where branch_name='Khulna brunch'
+        and a.account_number = d.account_number
+                and customer_name not in
+		(select customer_name
+		from borrower);
+
+
+
+
+
+========================extra===============================
+
+Find all customers with an account but no loan:
+(select customer_name from depositor)
+except
+(select customer_name from borrower)
+
+
+Find all customers who have a loan at the bank but do
+not have an account.
+select distinct customer_name
+from borrower
+where customer_name not in (select customer_name
+from depositor )
+
+Find all customers that have both an account
+and a loan
+select customer_name
+from borrower
+where exists
+(select *
+from depositor
+where depositor.customer_name = borrower.customer_name) 
+
+
+
+find the name of all customer who have an account
+under motijhel branch but no loans.
+
+
+
+select customer_name
+	from account, despositor
+	where account.account_number = despositor.account_number
+        and branch_name='Mirpur brunch'
+union
+(select customer_name
+	from loan, borrower
+	where loan.loan_number = borrower.loan_number 
+        and branch_name = 'Mirpur brunch')
+
+
+select  customer_name
+	from despositor as d, account as a
+	where branch_name='Khulna brunch'
+        and a.account_number = d.account_number
+                and customer_name not in
+		(select customer_name
+		from borrower);
+
+
+select customer_name,branch_name 
+from account as a,despositor as d 
+where branch_name='Mirpur brunch' 
+and a.account_number=d.account_number;
+
+
+select S.customer-name
+from despositor as S
+where not exist (
+(select branch-name
+from branch
+where branch_name='Mirpur brunch')
+ except
+(select R.branch_name
+from despositor as T, account as R
+where T.account_number = R.account_number and
+S.customer_name = T.customer_name) )
+
+
+
+select customer_name,branch_name
+from account as a,despositor as d 
+where branch_name='motijhil' and a.account_number=d.account_number
+except
+(select customer_name from borrower b 
+  where d.customer_name = a.customer_name );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+==================1==================
+SELECT COUNT('report_number') from accident;
+
+SELECT COUNT('a.report_number') as Total_Accident_of_MR_Saiful_Islam
+FROM accident as a
+JOIN participate par ON par.report_number = a.report_number
+JOIN person p ON p.driver_id=par.driver_id
+WHERE p.name = 'Saiful islam';
+
+SELECT SUM(damage_amount) as Total, a.date
+from participate p, accident a
+where p.report_number=a.report_number
+and a.date = '2019-07-04';
+
+
+UPDATE participate
+INNER JOIN owns ON owns.driver_id = participate.driver_id
+INNER JOIN car ON owns.license = car.license
+INNER JOIN accident ON accident.driver_id = participate.driver_id
+SET participate.damage_amount = participate.damage_amount + 3000,
+    participate.report_number = 'AR21970',
+    accident.report_number = 'AR21970',
+    owns.license = 'AABB2',
+    car.license = owns.license
+
+WHERE participate.report_number = accident.report_number
+And participate.driver_id = 4;
+
+============================================================================
+
+SELECT location, damage_amount,a.report_number,p.report_number 
+FROM accident a, participate p 
+WHERE a.report_number = p.report_number
+and a.report_number=1211;
+
+SELECT * FROM accident a, participate p 
+WHERE a.report_number = p.report_number;
+
+
+
+UPDATE accident, participate
+SET participate.damage_amount = participate.damage_amount + 3000,
+    participate.report_number = 'AR21970',
+    accident.location = 'Rajshahi'
+WHERE
+    participate.report_number = accident.report_number
+    AND participate.report_number=4443;
+
+
+UPDATE participate
+INNER JOIN accident ON accident.report_number = participate.report_number
+SET participate.report_number = '123456789',
+    accident.report_number = '123456789'
+WHERE participate.report_number = '4443';
+
+
+UPDATE t1
+INNER JOIN t2 ON t2.t1_id = t1.id
+INNER JOIN t3 ON t2.t3_id = t3.id
+SET t1.a = 'something',
+    t2.b = 42,
+    t3.c = t2.c
+WHERE t1.a = 'blah';
+
+
+
+SELECT max(damage_amount) as Max,p.report_number, a.date, a.location
+from participated p, accident a
+WHERE damage_amount = (SELECT MAX(damage_amount) 
+                       FROM participated) and p.report_number=a.report_number;
+
+
+UPDATE participate, accident
+  SET salesOrders.Quantity = salesOrders.Quantity - 5, 
+      products.availableStock = products.availableStock + 5
+WHERE products.productId = salesOrders.productId
+  AND salesOrders.orderId = 100 AND salesOrders.productId = 20;
+

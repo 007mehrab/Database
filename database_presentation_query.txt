@@ -1,0 +1,203 @@
+====================(1)(7)======================
+mysql  -h localhost  -u  root  -p
+
+create database DBMS_Insurance;
+use DBMS_Insurance;
+
+CREATE TABLE person(
+    driver_id int PRIMARY KEY,
+    name varchar(255),
+    address varchar(255)
+);
+
+
+CREATE TABLE car(
+    license varchar(255) NOT NULL PRIMARY KEY,
+    model varchar(255) NOT NULL,
+    year Date
+);
+
+
+CREATE TABLE accident(
+    report_number varchar(255) PRIMARY KEY,
+    date Date,
+    location varchar(255)
+);
+
+
+CREATE TABLE owns(
+    driver_id int NOT NULL PRIMARY KEY,
+    license varchar(255) NOT NULL
+);
+
+
+CREATE TABLE participate(
+    driver_id int NOT NULL,
+    car varchar(255),
+    report_number varchar(255),
+    damage_amount varchar(255),
+    CONSTRAINT PK_participate PRIMARY KEY (driver_id,car,report_number)
+);
+
+exit;
+
+====================(2)(5)======================
+mysql  -h localhost  -u  root  -p
+
+create database DBMS_Employee;
+use DBMS_Employee;
+
+
+create table employee
+(
+emp_name char(20) PRIMARY KEY,
+street char(20),
+city char(20)
+);
+
+
+create table works
+(
+emp_name char(20) PRIMARY KEY,
+company_name char(20),
+salary int(10)
+);
+
+
+create table company
+(
+company_name char(20),
+city char(20)
+);
+
+
+create table manages
+(
+emp_name char(20) PRIMARY KEY,
+manager_name char(20)
+);
+
+exit;
+
+===================(3)(6)(8)(10)===================
+mysql  -h localhost  -u  root  -p
+
+create database DBMS_Bank;
+use DBMS_Bank;
+
+create table branch
+(
+branch_name char(30) PRIMARY KEY,
+branch_city char(30),
+assets char(30)
+);
+
+
+create table customer
+(
+customer_name char(20) PRIMARY KEY,
+customer_street char(20),
+customer_city char(20)
+);
+
+
+create table loan
+(
+loan_number int(20) PRIMARY KEY,
+branch_name char(30),
+ammount int(30)
+);
+
+
+create table borrower
+(
+customer_name char(20),
+loan_number int(20),
+CONSTRAINT PK_borrower PRIMARY KEY (customer_name,loan_number)
+);
+
+create table account
+(
+account_number int(20) PRIMARY KEY,
+branch_name char(20),
+balance int(30)
+);
+
+create table depositor
+(
+customer_name char(20),
+account_number int(20),
+CONSTRAINT PK_despositor PRIMARY KEY (customer_name,account_number)
+);
+
+=====================(4)========================
+mysql  -h localhost  -u  root  -p
+
+create database DBMS_Employee1;
+use DBMS_Employee1;
+
+create table employee
+(
+emp_id int(20) PRIMARY KEY,
+emp_name char(20),
+street char(20),
+city char(20)
+);
+
+
+create table works
+(
+emp_id int(20) PRIMARY KEY,
+company_name char(20),
+salary int(10)
+);
+
+
+create table company
+(
+company_name char(20),
+city char(20)
+);
+
+
+create table manages
+(
+emp_id int(20) PRIMARY KEY,
+manager_name char(20)
+);
+
+
+=====================(9)========================
+mysql  -h localhost  -u  root  -p
+
+create database DBMS_Company;
+use DBMS_Company;
+
+create table lives
+(
+person_name char(20) PRIMARY KEY,
+street char(20),
+city char(20)
+);
+
+
+create table works
+(
+person_name char(20) PRIMARY KEY,
+company_name char(20),
+salary int(10)
+);
+
+
+create table location
+(
+company_name char(20) PRIMARY KEY,
+city char(20)
+);
+
+
+create table manager
+(
+person_name char(20) PRIMARY KEY,
+manager_name char(20)
+);

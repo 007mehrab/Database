@@ -1,0 +1,66 @@
+===================2================
+
+a.Find the names,city of all employees who live in the same cities  
+as the companies for which they work for.
+
+-> select e.emp_name, e.city from employee as e,works as w,company as c 
+where e.emp_name=w.emp_name and w.company_name=c.company_name and e.city=c.city;
+
+b.Find the names of employees who do not work for Janata Bank.
+-> select emp_name from works where company_name !='Janata';
+
+c.Find all employees in the database who earn more than each employee of 'Janata'.
+-> select emp_name,salary from works 
+   where salary>all(select salary from works where company_name='Janata');
+
+d.find all employees who earn more than the average salary of all employees of their company.
+
+-> SELECT emp_name FROM works 
+WHERE salary > (SELECT AVG(salary) FROM works);
+
+
+===================5================
+a.list the employee name and their salary by manager name
+
+-> select works.emp_name, salary ,manages.manager_name 
+   from works, manages 
+   where works.emp_name = manages.emp_name
+
+d.find all employees who earn more than the average salary of all employees of their company.
+
+-> SELECT emp_name FROM works 
+WHERE salary > (SELECT AVG(salary) FROM works);
+
+
+c.find the company that has the most employees
+
+or -> select company_name, count(emp_name) an Total_Employee 
+      from Works
+      having count(distinct emp_name)>=all ( select count(distinct emp_name) 
+      from Works group by company_name)
+
+
+
+
+d.find those companies whose employee earn a higher salary, on avarage
+then the avarage salary at Gazi bank corporation.
+
+select company_name,salary,emp_namme
+from Works
+having avg(salary)>(select avg(salary)
+                   from Works
+                   where company_name= 'Gazi')
+
+
+
+
+
+
+
+
+
+
+
+
+
+

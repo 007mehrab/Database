@@ -1,0 +1,152 @@
+==================1/7======================
+insert into person values('1', 'Mehrab', 'Dhaka');
+insert into person values('2', 'Raihan', 'Dhaka');
+insert into person values('3', 'Alamin', 'Dhaka');
+insert into person values('4', 'Rakib', 'Dhaka');
+insert into person values('5', 'Sakib', 'Dhaka');
+
+insert into car values('ewe1', 'Acura MDX', '2008-7-04');
+insert into car values('34r2', 'Audi A3', '2008-7-04');
+insert into car values('34e3', 'Audi A4', '2008-7-04');
+insert into car values('erf4', 'BMW 2s', '2008-7-04');
+insert into car values('sed5', 'BMW 3s', '2008-7-04');
+
+insert into accident values('1211', '2008-7-04', 'Dhaka');
+insert into accident values('2111', '2008-7-04', 'Cumilla');
+insert into accident values('4443', '2008-7-04', 'Chadpur');
+insert into accident values('5544', '2008-7-04', 'Khulna');
+insert into accident values('4565', '2008-7-04', 'Rajshahi');
+
+insert into owns values('1', 'ewe1');
+insert into owns values('2', '34r2');
+insert into owns values('3', '34e3');
+insert into owns values('4', 'erf4');
+insert into owns values('5', 'sed5');
+
+insert into participate values('1', 'Acura MDX', '1211', '12311');
+insert into participate values('2', 'Audi A3', '2111', '12311' );
+insert into participate values('3', 'Audi A4', '4443', '12311' );
+insert into participate values('4', 'BMW 2s', '5544', '12311');
+insert into participate values('5', 'BMW 3s', '4565', '12311' );
+
+==================2/5=======================
+
+insert into employee values('Mehrab', '60feet-road', 'Dhaka');
+insert into employee values('Raihan', 'kotbari-road', 'Cumilla');
+insert into employee values('Alamin', 'bks-road', 'Barishal');
+insert into employee values('Rakib', 'sd-road', 'Rajshahi');
+insert into employee values('Sakib', 'ups-road', 'Khulna');
+
+insert into works values('Mehrab', 'IsDB', '30200');
+insert into works values('Raihan', 'Janata', '22000');
+insert into works values('Alamin', 'Gazi', '20500');
+insert into works values('Rakib', 'Beximco', '20000');
+insert into works values('Sakib', 'Navana', '20500');
+
+insert into company values('IsDB', 'Dhaka');
+insert into company values('Janata', 'Cumilla');
+insert into company values('Gazi', 'Barishal');
+insert into company values('Beximco', 'Rajshahi');
+insert into company values('Navana', 'Khulna');
+
+insert into manages values('Mehrab', 'Dr. Muhammad Sulaiman Al Jasser');
+insert into manages values('Raihan', 'Md Kabir Ahamed');
+insert into manages values('Alamin', 'Shahriar Tanvir');
+insert into manages values('Rakib', 'Nazmul Hassan MP');
+insert into manages values('Sakib', 'SHAFIUL ISLAM');
+
+
+=====================3/6/8/10===================
+
+
+insert into branch values('Mirpur brunch', 'Dhaka', '1000000');
+insert into branch values('cumilla brunch', 'Cumilla', '2000000');
+insert into branch values('Barishal brunch', 'Barishal', '3000000');
+insert into branch values('Rajshahi brunch', 'Rajshahi', '4000000');
+insert into branch values('Khulna brunch', 'Khulna', '5000000');
+
+insert into customer values('Mehrab', '60feet-road', 'Dhaka');
+insert into customer values('Raihan', 'kotbari-road', 'Cumilla');
+insert into customer values('Alamin', 'bks-road', 'Barishal');
+insert into customer values('Rakib', 'sd-road', 'Rajshahi');
+insert into customer values('Sakib', 'ups-road', 'Khulna');
+
+insert into loan values('11', 'Mirpur brunch', '10000');
+insert into loan values('22', 'cumilla brunch', '20000');
+insert into loan values('33', 'Barishal brunch', '30000');
+insert into loan values('44', 'Rajshahi brunch', '40000');
+insert into loan values('55', 'Khulna brunch', '50000');
+
+insert into borrower values('Mehrab', '11');
+insert into borrower values('Raihan', '22');
+insert into borrower values('Alamin', '33');
+insert into borrower values('Rakib', '44');
+insert into borrower values('Sakib', '55');
+
+insert into account values('1123', 'Mirpur brunch', '100000');
+insert into account values('2223', 'cumilla brunch', '200000');
+insert into account values('3322', 'Barishal brunch', '300000');
+insert into account values('4445', 'Rajshahi brunch', '400000');
+insert into account values('5545', 'Khulna brunch', '500000');
+
+insert into despositor values('Mehrab', '1123');
+insert into despositor values('Raihan', '2223');
+insert into despositor values('Alamin', '3322');
+insert into despositor values('Rakib', '4445');
+insert into despositor values('Sakib', '5545');
+
+
+
+======================4=====================
+
+insert into employee values('1', 'Mehrab', '60feet-road', 'Dhaka');
+insert into employee values('2', 'Raihan', 'kotbari-road', 'Cumilla');
+insert into employee values('3', 'Alamin', 'bks-road', 'Barishal');
+insert into employee values('4', 'Rakib', 'sd-road', 'Rajshahi');
+insert into employee values('5', 'Sakib', 'ups-road', 'Khulna');
+
+insert into works values('1', 'IsDB', '30200');
+insert into works values('2', 'Janata', '22000');
+insert into works values('3', 'Gazi', '20500');
+insert into works values('4', 'Beximco', '20000');
+insert into works values('5', 'Navana', '20500');
+
+insert into company values('IsDB', 'Dhaka');
+insert into company values('Janata', 'Cumilla');
+insert into company values('Gazi', 'Barishal');
+insert into company values('Beximco', 'Rajshahi');
+insert into company values('Navana', 'Khulna');
+
+insert into manages values('1', 'Dr. Muhammad Sulaiman Al Jasser');
+insert into manages values('2', 'Md Kabir Ahamed');
+insert into manages values('3', 'Shahriar Tanvir');
+insert into manages values('4', 'Nazmul Hassan MP');
+insert into manages values('5', 'SHAFIUL ISLAM');
+
+======================9=====================
+
+insert into lives values('Mehrab', '60feet-road', 'Dhaka');
+insert into lives values('Raihan', 'kotbari-road', 'Cumilla');
+insert into lives values('Alamin', 'bks-road', 'Barishal');
+insert into lives values('Rakib', 'sd-road', 'Rajshahi');
+insert into lives values('Sakib', 'ups-road', 'Khulna');
+
+insert into works values('Mehrab', 'IsDB', '30200');
+insert into works values('Raihan', 'Janata', '22000');
+insert into works values('Alamin', 'Gazi', '20500');
+insert into works values('Rakib', 'Beximco', '20000');
+insert into works values('Sakib', 'Navana', '20500');
+
+insert into location values('IsDB', 'Dhaka');
+insert into location values('Janata', 'Cumilla');
+insert into location values('Gazi', 'Barishal');
+insert into location values('Beximco', 'Rajshahi');
+insert into location values('Navana', 'Khulna');
+
+insert into manager values('Mehrab', 'Dr. Muhammad Sulaiman Al Jasser');
+insert into manager values('Raihan', 'Md Kabir Ahamed');
+insert into manager values('Alamin', 'Shahriar Tanvir');
+insert into manager values('Rakib', 'Nazmul Hassan MP');
+insert into manager values('Sakib', 'SHAFIUL ISLAM');
+
+
